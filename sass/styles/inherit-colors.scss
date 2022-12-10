@@ -1,0 +1,11 @@
+/* Primary Hover */
+.wp-block-social-links.is-style-inherit-colors {
+	li.wp-social-link {
+		color: inherit;
+		background: none;
+
+		a {
+			padding: 0;
+		}
+	}
+}

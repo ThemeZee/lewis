@@ -1,0 +1,14 @@
+/* Button Block */
+.wp-block-button.is-style-outline > a.wp-block-button__link,
+.wp-block-button a.wp-block-button__link.is-style-outline {
+	border: 3px solid;
+	padding: 0.4rem 1rem;
+
+	&.has-primary-color {
+		&:hover,
+		&:active,
+		&:focus {
+			color: var(--wp--preset--color--secondary) !important;
+		}
+	}
+}

@@ -1,0 +1,56 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 2,
+	"title": "Grapes",
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"slug": "primary",
+					"color": "#c33181",
+					"name": "Primary"
+				},
+				{
+					"slug": "secondary",
+					"color": "#af1d6d",
+					"name": "Secondary"
+				},
+				{
+					"slug": "tertiary",
+					"color": "#9a0858",
+					"name": "Tertiary"
+				},
+				{
+					"slug": "light-gray",
+					"color": "#f9f1f5",
+					"name": "Light Gray"
+				},
+				{
+					"slug": "medium-gray",
+					"color": "#e1d1d9",
+					"name": "Medium Gray"
+				},
+				{
+					"slug": "gray",
+					"color": "#877880",
+					"name": "Gray"
+				},
+				{
+					"slug": "dark-gray",
+					"color": "#483740",
+					"name": "Dark Gray"
+				},
+				{
+					"slug": "darker-gray",
+					"color": "#3b2b33",
+					"name": "Darker Gray"
+				}
+			]
+		}
+	},
+	"styles": {
+		"color": {
+			"background": "#f0f0f0"
+		}
+	}
+}

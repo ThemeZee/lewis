@@ -1,0 +1,20 @@
+/* Post Template Block */
+.wp-block-post-template.is-flex-container.columns-2,
+.wp-block-post-template.is-flex-container.columns-3,
+.wp-block-post-template.is-flex-container.columns-4 {
+	gap: var(--wp--preset--spacing--70);
+}
+
+@media (min-width: 600px) {
+	ul.wp-block-post-template.is-flex-container.is-flex-container.columns-2 > li {
+		width: calc(50% - ( var(--wp--preset--spacing--70) / 2 ));
+	}
+
+	ul.wp-block-post-template.is-flex-container.is-flex-container.columns-3 > li {
+		width: calc(33.33333% - ( var(--wp--preset--spacing--70) / 1.5 ));
+	}
+
+	ul.wp-block-post-template.is-flex-container.is-flex-container.columns-4 > li {
+		width: calc(25% - ( var(--wp--preset--spacing--70) / 1.33333 ));
+	}
+}

@@ -1,0 +1,22 @@
+/*
+ * Editor Styles
+ *
+ * @package Lewis
+ */
+
+/* Post Titles */
+.edit-post-visual-editor__post-title-wrapper .wp-block-post-title {
+	margin-bottom: 0.75em;
+	padding-bottom: 0.75em;
+
+	&::before {
+		display: inline-block;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 1.5em;
+		height: 3px;
+		content: "";
+		background-color: var(--wp--preset--color--primary);
+	}
+}

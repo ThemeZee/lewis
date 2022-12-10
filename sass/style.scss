@@ -1,0 +1,75 @@
+/*
+Theme Name: Lewis
+Theme URI: https://themezee.com/themes/lewis/
+Author: ThemeZee
+Author URI: https://themezee.com/
+Description: Lewis is a clean and lightweight business theme using modern colors and typography. The theme supports a huge range of block patterns, which allow you to build your static pages with just a few clicks. It also comes with multiple header and footer block template parts.
+Version: 1.0
+Requires at least: 6.0
+Tested up to: 6.1
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: lincoln
+Tags: full-site-editing, template-editing, one-column, blog, portfolio, custom-background, custom-logo, custom-header, custom-menu, grid-layout, education, editor-style, wide-blocks, block-styles, block-patterns, rtl-language-support, right-sidebar, news, featured-images, flexible-header, custom-colors, full-width-template, sticky-post, threaded-comments, footer-widgets, translation-ready, theme-options, two-columns, three-columns
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# - HTML Elements
+# - Theme Layout
+# - Theme Blocks
+# - Query Blocks
+# - Layout Blocks
+# - Textformatting Blocks
+# - Block Styles
+--------------------------------------------------------------*/
+
+@import "_mixins";
+
+/*--------------------------------------------------------------
+# - HTML Elements
+--------------------------------------------------------------*/
+@import "elements/formatted";
+@import "elements/forms";
+@import "elements/hr";
+@import "elements/lists";
+@import "elements/media";
+@import "elements/quotes";
+@import "elements/tables";
+
+/*--------------------------------------------------------------
+# - Theme Layout
+--------------------------------------------------------------*/
+@import "layout/header";
+@import "layout/sidebar";
+@import "layout/footer";
+
+/*--------------------------------------------------------------
+# - Blocks
+--------------------------------------------------------------*/
+@import "blocks/button";
+@import "blocks/group";
+@import "blocks/heading";
+@import "blocks/image";
+@import "blocks/media-text";
+@import "blocks/paragraph";
+@import "blocks/post-template";
+@import "blocks/pullquote";
+@import "blocks/query-pagination";
+@import "blocks/quote";
+@import "blocks/separator";
+
+/*--------------------------------------------------------------
+# - Block Styles
+--------------------------------------------------------------*/
+@import "styles/flip-link-hover";
+@import "styles/footer-navigation";
+@import "styles/inherit-colors";
+@import "styles/main-navigation";
+@import "styles/primary-hover";
+@import "styles/underlined-heading";

@@ -1,0 +1,29 @@
+/* Underlined Heading */
+.is-style-underlined-heading {
+	position: relative;
+	margin-bottom: 0.75em !important;
+	padding-bottom: 0.75em;
+
+	&::before {
+		display: inline-block;
+		position: absolute;
+		bottom: 0;
+		width: 1.5em;
+		height: 3px;
+		content: "";
+		background-color: var(--wp--preset--color--primary);
+	}
+
+	&.has-text-align-center {
+		&::before {
+			left: 50%;
+			margin-left: -0.75em;
+		}
+	}
+
+	&.has-text-align-right {
+		&::before {
+			right: 0;
+		}
+	}
+}

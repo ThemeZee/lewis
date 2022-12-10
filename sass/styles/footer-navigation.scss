@@ -1,0 +1,114 @@
+/* Footer Navigation */
+.is-style-footer-navigation {
+	font-size: 17px;
+
+	/* Desktop Menu */
+	.wp-block-navigation__responsive-container:not(.is-menu-open) {
+		ul.wp-block-navigation__container {
+			gap: 0 1rem;
+
+			> li.wp-block-navigation-item {
+				> a.wp-block-navigation-item__content {
+					padding: 0.5rem;
+
+					&:hover,
+					&:focus,
+					&:active {
+						text-decoration: none;
+					}
+				}
+
+				&:hover > .wp-block-navigation__submenu-icon,
+				&:hover > a.wp-block-navigation-item__content {
+					color: var(--wp--preset--color--primary);
+				}
+
+				.wp-block-navigation__submenu-icon {
+					margin-left: 0;
+					margin-top: 0;
+					width: 14px;
+					height: 14px;
+				}
+
+				> ul.wp-block-navigation__submenu-container {
+					top: auto;
+					bottom: 100%;
+				}
+
+				ul.wp-block-navigation__submenu-container {
+					padding: 0;
+					border: none;
+					font-size: var(--wp--preset--font-size--small);
+					min-width: 250px !important;
+
+					> li.wp-block-navigation-item:first-child {
+						padding-top: 0.75rem;
+					}
+
+					> li.wp-block-navigation-item:last-child {
+						padding-bottom: 0.75rem;
+					}
+
+					li.wp-block-navigation-item {
+						color: var(--wp--preset--color--white);
+						background-color: var(--wp--preset--color--primary);
+
+						a.wp-block-navigation-item__content {
+							padding: 0.75rem 1.75rem;
+						}
+
+						.wp-block-navigation__submenu-icon {
+							margin-right: 1rem;
+						}
+
+						ul.wp-block-navigation__submenu-container {
+							top: 0;
+							border-left: 1px solid #fff;
+						}
+					}
+
+					li.wp-block-navigation-item:not(:first-child) {
+						ul.wp-block-navigation__submenu-container {
+							top: -0.75rem;
+						}
+					}
+				}
+			}
+
+			li.current-menu-item {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	/* Mobile Menu */
+	.wp-block-navigation__responsive-container.is-menu-open {
+		padding: var(--wp--preset--spacing--50);
+
+		.wp-block-navigation__responsive-dialog {
+			margin-top: 0;
+		}
+
+		.wp-block-navigation__responsive-container-content {
+			.wp-block-navigation__container,
+			.wp-block-navigation__submenu-container {
+				gap: 1rem;
+			}
+
+			.wp-block-navigation__submenu-container {
+				padding: 1rem 1rem 0 2rem;
+			}
+
+			a:hover,
+			a:focus,
+			a:active {
+				color: var(--wp--preset--color--primary);
+				text-decoration: none;
+			}
+
+			li.current-menu-item {
+				text-decoration: underline;
+			}
+		}
+	}
+}

@@ -1,0 +1,4 @@
+/* Block template parts have no options so we remove the margin manually */
+.site-footer.wp-block-template-part {
+	margin-top: 0;
+}

@@ -1,0 +1,17 @@
+blockquote {
+	margin-left: 0;
+	margin-right: 0;
+	border-left: 0.25rem solid currentColor;
+	padding-left: 1.5rem;
+	font-size: 1.25rem;
+}
+
+blockquote cite {
+	display: block;
+	font-size: 1rem;
+	font-style: normal;
+}
+
+blockquote cite::before {
+	content: "\2014\00a0";
+}

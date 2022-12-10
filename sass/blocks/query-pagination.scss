@@ -1,0 +1,11 @@
+/* Query Pagination Block */
+.wp-block-query-pagination {
+	span.current {
+		padding: 0.4rem 0.8rem;
+		background-color: var(--wp--preset--color--medium-gray);
+	}
+
+	> .wp-block-query-pagination-numbers {
+		margin-bottom: 0;
+	}
+}

@@ -1,0 +1,16 @@
+/* Pullquote Block */
+.wp-block-pullquote {
+	border-top: 0.25rem solid currentColor;
+	border-bottom: 0.25rem solid currentColor;
+	color: currentColor;
+	padding: 1.5rem 0;
+
+	blockquote {
+		border: none;
+		padding: 0;
+	}
+
+	&.has-background {
+		padding: 1.5rem;
+	}
+}

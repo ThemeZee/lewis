@@ -1,0 +1,52 @@
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+pre {
+	overflow: auto;
+	padding: 0.75rem 1rem;
+	max-width: 100%;
+	background: rgba(0, 0, 0, 0.05);
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 3px;
+	@include font-size(15);
+	font-family: Menlo, Consolas, monaco, monospace;
+}
+
+code,
+kbd,
+tt,
+var {
+	@include font-size(15);
+	font-family: Menlo, Consolas, monaco, monospace;
+	background: rgba(0, 0, 0, 0.05);
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	padding: 1px 3px;
+	border-radius: 3px;
+}
+
+pre code {
+	background: none;
+	border: none;
+	padding: 0;
+}
+
+abbr,
+acronym {
+	cursor: help;
+}
+
+mark,
+ins {
+	text-decoration: none;
+}
+
+big {
+	font-size: 125%;
+}
