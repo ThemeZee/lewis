@@ -75,12 +75,16 @@ j) Raleway Font - https://www.google.com/fonts/specimen/Raleway
 License: SIL Open Font License (http://scripts.sil.org/OFL)
 Copyright: Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida
 
-k) Roboto Slab Font - https://www.google.com/fonts/specimen/Roboto+Slab
-License: APACHE LICENSE, VERSION 2.0 (https://www.apache.org/licenses/LICENSE-2.0)
+k) Roboto Font - https://fonts.google.com/specimen/Roboto
+License: Distributed under the terms of the APACHE LICENSE, VERSION 2.0 (https://www.apache.org/licenses/LICENSE-2.0)
 Copyright: Christian Robertson
 
-2. Image used in screenshot.png is from Pexels
+2. Images used in screenshot.png are from Pexels
 
-https://www.pexels.com/photo/person-typing-on-a-laptop-8036328/
+a) https://www.pexels.com/photo/low-angle-view-of-office-building-against-sky-323705/
 License: Distributed under the terms of the Pexels License (https://www.pexels.com/license/)
-Copyright: Ron Lach (https://www.pexels.com/@ron-lach/)
+Copyright: Expect Best (https://www.pexels.com/@expect-best-79873/)
+
+b) https://www.pexels.com/photo/report-paper-on-a-white-board-7876383/
+License: Distributed under the terms of the Pexels License (https://www.pexels.com/license/)
+Copyright: Karolina Grabowska (https://www.pexels.com/@karolina-grabowska/)
