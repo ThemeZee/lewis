@@ -10,6 +10,9 @@
  */
 function lewis_setup() {
 
+	// Make theme available for translation.
+	load_theme_textdomain( 'lewis', get_template_directory() . '/languages' );
+
 	// Enqueue editor styles.
 	add_editor_style( 'style.css' );
 
