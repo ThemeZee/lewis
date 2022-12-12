@@ -8,11 +8,11 @@ Tested up to: 6.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Lewis is a simple and elegant business theme with a dark background and stunning typography.
+Lewis is a clean and lightweight business theme using modern colors and typography.
 
 == Description ==
 
-Lewis is a simple and elegant business theme with a dark background and stunning typography. It supports a large number of block patterns, with which you can easily create complex pages. 
+Lewis is a clean and lightweight business theme using modern colors and typography. The theme supports a huge range of block patterns, which allow you to build your static pages with just a few clicks. It also comes with multiple header and footer block template parts.
 
 == Copyright ==
 
