@@ -19,8 +19,8 @@
 		<!-- wp:column -->
 		<div class="wp-block-column">
 
-			<!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"1","fontStyle":"normal","fontWeight":"700"}},"fontSize":"huge"} -->
-			<p class="has-text-align-center has-huge-font-size" style="font-style:normal;font-weight:700;line-height:1">24k+</p>
+			<!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"1","fontStyle":"normal","fontWeight":"700"}},"fontSize":"xxx-large"} -->
+			<p class="has-text-align-center has-xxx-large-font-size" style="font-style:normal;font-weight:700;line-height:1">24k+</p>
 			<!-- /wp:paragraph -->
 
 			<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
@@ -33,8 +33,8 @@
 		<!-- wp:column -->
 		<div class="wp-block-column">
 
-			<!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"1","fontStyle":"normal","fontWeight":"700"}},"fontSize":"huge"} -->
-			<p class="has-text-align-center has-huge-font-size" style="font-style:normal;font-weight:700;line-height:1">98%</p>
+			<!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"1","fontStyle":"normal","fontWeight":"700"}},"fontSize":"xxx-large"} -->
+			<p class="has-text-align-center has-xxx-large-font-size" style="font-style:normal;font-weight:700;line-height:1">98%</p>
 			<!-- /wp:paragraph -->
 
 			<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
@@ -47,8 +47,8 @@
 		<!-- wp:column -->
 		<div class="wp-block-column">
 
-			<!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"1","fontStyle":"normal","fontWeight":"700"}},"fontSize":"huge"} -->
-			<p class="has-text-align-center has-huge-font-size" style="font-style:normal;font-weight:700;line-height:1">30+</p>
+			<!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"1","fontStyle":"normal","fontWeight":"700"}},"fontSize":"xxx-large"} -->
+			<p class="has-text-align-center has-xxx-large-font-size" style="font-style:normal;font-weight:700;line-height:1">30+</p>
 			<!-- /wp:paragraph -->
 
 			<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
@@ -61,8 +61,8 @@
 		<!-- wp:column -->
 		<div class="wp-block-column">
 
-			<!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"1","fontStyle":"normal","fontWeight":"700"}},"fontSize":"huge"} -->
-			<p class="has-text-align-center has-huge-font-size" style="font-style:normal;font-weight:700;line-height:1">100%</p>
+			<!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"1","fontStyle":"normal","fontWeight":"700"}},"fontSize":"xxx-large"} -->
+			<p class="has-text-align-center has-xxx-large-font-size" style="font-style:normal;font-weight:700;line-height:1">100%</p>
 			<!-- /wp:paragraph -->
 
 			<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->

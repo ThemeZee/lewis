@@ -34,8 +34,8 @@
 					<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|60"}},"layout":{"type":"flex","allowOrientation":false,"flexWrap":"nowrap","verticalAlignment":"top"}} -->
 					<div class="wp-block-group">
 
-						<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1","fontStyle":"normal","fontWeight":"700"}},"fontSize":"huge"} -->
-						<p class="has-huge-font-size" style="font-style:normal;font-weight:700;line-height:1">1</p>
+						<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1","fontStyle":"normal","fontWeight":"700"}},"fontSize":"xxx-large"} -->
+						<p class="has-xxx-large-font-size" style="font-style:normal;font-weight:700;line-height:1">1</p>
 						<!-- /wp:paragraph -->
 
 						<!-- wp:paragraph -->
@@ -54,8 +54,8 @@
 					<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|60"}},"layout":{"type":"flex","allowOrientation":false,"flexWrap":"nowrap","verticalAlignment":"top"}} -->
 					<div class="wp-block-group">
 
-						<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1","fontStyle":"normal","fontWeight":"700"}},"fontSize":"huge"} -->
-						<p class="has-huge-font-size" style="font-style:normal;font-weight:700;line-height:1">2</p>
+						<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1","fontStyle":"normal","fontWeight":"700"}},"fontSize":"xxx-large"} -->
+						<p class="has-xxx-large-font-size" style="font-style:normal;font-weight:700;line-height:1">2</p>
 						<!-- /wp:paragraph -->
 
 						<!-- wp:paragraph -->
@@ -80,8 +80,8 @@
 					<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|60"}},"layout":{"type":"flex","allowOrientation":false,"flexWrap":"nowrap","verticalAlignment":"top"}} -->
 					<div class="wp-block-group">
 
-						<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1","fontStyle":"normal","fontWeight":"700"}},"fontSize":"huge"} -->
-						<p class="has-huge-font-size" style="font-style:normal;font-weight:700;line-height:1">3</p>
+						<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1","fontStyle":"normal","fontWeight":"700"}},"fontSize":"xxx-large"} -->
+						<p class="has-xxx-large-font-size" style="font-style:normal;font-weight:700;line-height:1">3</p>
 						<!-- /wp:paragraph -->
 
 						<!-- wp:paragraph -->
@@ -100,8 +100,8 @@
 					<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|60"}},"layout":{"type":"flex","allowOrientation":false,"flexWrap":"nowrap","verticalAlignment":"top"}} -->
 					<div class="wp-block-group">
 
-						<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1","fontStyle":"normal","fontWeight":"700"}},"fontSize":"huge"} -->
-						<p class="has-huge-font-size" style="font-style:normal;font-weight:700;line-height:1">4</p>
+						<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1","fontStyle":"normal","fontWeight":"700"}},"fontSize":"xxx-large"} -->
+						<p class="has-xxx-large-font-size" style="font-style:normal;font-weight:700;line-height:1">4</p>
 						<!-- /wp:paragraph -->
 
 						<!-- wp:paragraph -->

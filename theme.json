@@ -213,8 +213,8 @@
 						"min": "1.75rem",
 						"max": "3rem"
 					},
-					"slug": "huge",
-					"name": "Huge"
+					"slug": "xxx-large",
+					"name": "Extra Extra Extra Large"
 				}
 			]
 		},
@@ -514,7 +514,7 @@
 			},
 			"h1": {
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size--huge)"
+					"fontSize": "var(--wp--preset--font-size--xxx-large)"
 				}
 			},
 			"h2": {
