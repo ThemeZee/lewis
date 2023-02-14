@@ -9,6 +9,7 @@
 	margin-bottom: 0.75em;
 	padding-bottom: 0.75em;
 }
+
 .edit-post-visual-editor__post-title-wrapper .wp-block-post-title::before {
 	display: inline-block;
 	position: absolute;
