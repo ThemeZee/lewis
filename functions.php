@@ -174,9 +174,10 @@ define( 'LEWIS_THEME_STORE_URL', 'https://themezee.com' );
 
 
 /**
- * Include License Settings and Plugin Updater.
+ * Include Theme Settings and Theme Updater.
  */
 require_once get_parent_theme_file_path( '/includes/class-lewis-admin-page.php' );
+require_once get_parent_theme_file_path( '/includes/class-lewis-demo-content-settings.php' );
 require_once get_parent_theme_file_path( '/includes/class-lewis-license-settings.php' );
 require_once get_parent_theme_file_path( '/includes/class-lewis-theme-updater.php' );
 

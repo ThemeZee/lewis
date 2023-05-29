@@ -34,8 +34,8 @@ class Lewis_Admin_Page {
 	 */
 	public static function add_settings_page() {
 		add_theme_page(
-			esc_html__( 'Theme License', 'lewis' ),
-			esc_html__( 'Theme License', 'lewis' ),
+			esc_html__( 'Theme Setup', 'lewis' ),
+			esc_html__( 'Theme Setup', 'lewis' ),
 			'manage_options',
 			'lewis-theme',
 			array( __CLASS__, 'render_settings_page' )
@@ -78,7 +78,15 @@ class Lewis_Admin_Page {
 			add_option( 'lewis_theme_settings' );
 		}
 
-		// Add Section.
+		// Add Demo Section.
+		add_settings_section(
+			'lewis_demo_section',
+			esc_html__( 'Demo Content', 'lewis' ),
+			array( __CLASS__, 'demo_section_intro' ),
+			'lewis_theme_settings'
+		);
+
+		// Add License Section.
 		add_settings_section(
 			'lewis_license_section',
 			esc_html__( 'License Settings', 'lewis' ),
@@ -92,6 +100,13 @@ class Lewis_Admin_Page {
 			'lewis_theme_settings',
 			array( __CLASS__, 'sanitize_settings' )
 		);
+	}
+
+	/**
+	 * Demo Section Intro
+	 */
+	public static function demo_section_intro() {
+		esc_html_e( 'Import the demo content into your website to get started quickly.', 'lewis' );
 	}
 
 	/**
@@ -122,7 +137,13 @@ class Lewis_Admin_Page {
 
 		// Loop through each setting being saved and pass it through a sanitization filter.
 		foreach ( $input as $key => $value ) :
-			$input[ $key ] = sanitize_text_field( $value );
+			if ( is_array( $value ) ) :
+				foreach ( $value as $checkbox => $bool ) :
+					$input[ $key ][ $checkbox ] = ! empty( $bool );
+				endforeach;
+			else :
+				$input[ $key ] = sanitize_text_field( $value );
+			endif;
 		endforeach;
 
 		return array_merge( $saved, $input );
