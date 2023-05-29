@@ -113,18 +113,93 @@ class Lewis_Demo_Content_Settings {
 		}
 
 		if ( ! empty( $_POST['lewis_theme_settings']['lewis_demo_content']['pages'] ) ) {
-			// Import pages.
-		}
-
-		if ( ! empty( $_POST['lewis_theme_settings']['lewis_demo_content']['posts'] ) ) {
-			// Import posts.
+			self::create_demo_pages();
 		}
 
 		if ( ! empty( $_POST['lewis_theme_settings']['lewis_demo_content']['categories'] ) ) {
 			// Import categories.
 		}
 
+		if ( ! empty( $_POST['lewis_theme_settings']['lewis_demo_content']['posts'] ) ) {
+			self::create_demo_posts();
+		}
+
 		wp_safe_redirect( admin_url( 'themes.php?page=lewis-theme' ) );
+	}
+
+	/**
+	 * Create demo pages.
+	 */
+	private static function create_demo_pages() {
+		$home = wp_insert_post(
+			array(
+				'post_title'    => 'Home',
+				'post_content'  => self::load_demo_content( 'home' ),
+				'post_type'     => 'page',
+				'post_status'   => 'publish',
+				'post_author'   => get_current_user_id(),
+				'page_template' => 'page-no-title',
+			)
+		);
+
+		$services = wp_insert_post(
+			array(
+				'post_title'    => 'Services',
+				'post_content'  => self::load_demo_content( 'services' ),
+				'post_type'     => 'page',
+				'post_status'   => 'publish',
+				'post_author'   => get_current_user_id(),
+				'page_template' => 'page-no-title',
+			)
+		);
+
+		$blog = wp_insert_post(
+			array(
+				'post_title'   => 'Blog',
+				'post_content' => '',
+				'post_type'    => 'page',
+				'post_status'  => 'publish',
+				'post_author'  => get_current_user_id(),
+			)
+		);
+
+		update_option( 'page_on_front', $home );
+		update_option( 'page_for_posts', $blog );
+		update_option( 'show_on_front', 'page' );
+	}
+
+	/**
+	 * Create demo posts.
+	 */
+	private static function create_demo_posts() {
+		foreach ( array(
+			'Proin quis odio at augue feugiat rutrum non id lacus',
+			'Nam gravida nisi lacus, nec dignissim tortor gravida at. Fusce sed ante id',
+			'Maecenas nec odio et ante tincidunt tempus Nam eget dui',
+			'Morbi ut molestie velit, iaculis pharetra metus. Sed viverra nibh',
+			'Pellentesque convallis malesuada pharetra. Proin rhoncus dolor',
+		) as $title ) :
+			wp_insert_post(
+				array(
+					'post_title'   => $title,
+					'post_content' => self::load_demo_content( 'post' ),
+					'post_type'    => 'post',
+					'post_status'  => 'publish',
+					'post_author'  => get_current_user_id(),
+				)
+			);
+		endforeach;
+	}
+
+	/**
+	 * Load demo content.
+	 *
+	 * @param string $file File name.
+	 */
+	private static function load_demo_content( $file ) {
+		ob_start();
+		include get_parent_theme_file_path( '/includes/demo-content/' . $file . '.php' );
+		return ob_get_clean();
 	}
 }
 
