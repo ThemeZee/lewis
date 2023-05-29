@@ -3,7 +3,10 @@
  * Title: Footer Text
  * Slug: lewis/footer-text
  * Inserter: no
-*/
+ *
+ * @package Lincoln
+ */
+
 ?>
 
 <!-- wp:paragraph -->
@@ -11,5 +14,5 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|gray"}}}},"className":"flip-link-hover"} -->
-<p class="flip-link-hover has-link-color"><a href="#"><?php _e( 'Privacy Policy', 'lewis' ); ?></a> | <a href="#"><?php _e( 'Imprint', 'lewis' ); ?></a></p>
+<p class="flip-link-hover has-link-color"><a href="#"><?php esc_html_e( 'Privacy Policy', 'lewis' ); ?></a> | <a href="#"><?php esc_html_e( 'Imprint', 'lewis' ); ?></a></p>
 <!-- /wp:paragraph -->

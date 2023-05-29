@@ -10,12 +10,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+/**
+ * License Settings class
+ */
 class Lewis_License_Settings {
 
 	/**
 	 * Setup the Lewis Licene Settings class
 	 */
-	static function setup() {
+	public static function setup() {
 
 		// Register settings.
 		add_action( 'admin_init', array( __CLASS__, 'register_settings' ) );
@@ -37,7 +40,7 @@ class Lewis_License_Settings {
 	 *
 	 * @return array
 	 */
-	static function get_settings() {
+	public static function get_settings() {
 		$default_settings = array(
 			'lewis_license_key'    => '',
 			'lewis_license_status' => 'inactive',
@@ -49,7 +52,7 @@ class Lewis_License_Settings {
 	/**
 	 * Register all settings sections and fields
 	 */
-	static function register_settings() {
+	public static function register_settings() {
 
 		// Add License Status Setting.
 		add_settings_field(
@@ -73,7 +76,7 @@ class Lewis_License_Settings {
 	/**
 	 * License Status Callback
 	 */
-	static function render_license_status_setting() {
+	public static function render_license_status_setting() {
 		$options        = self::get_settings();
 		$license_status = $options['lewis_license_status'];
 		$license_key    = ! empty( $options['lewis_license_key'] ) ? trim( $options['lewis_license_key'] ) : false;
@@ -87,13 +90,14 @@ class Lewis_License_Settings {
 			$html .= '<br/><span class="description">' . esc_html__( 'Please activate your license.', 'lewis' ) . '</span>';
 		}
 
+		// phpcs:ignore
 		echo $html;
 	}
 
 	/**
 	 * License Key Callback
 	 */
-	static function render_license_key_setting() {
+	public static function render_license_key_setting() {
 		$options        = self::get_settings();
 		$license_status = $options['lewis_license_status'];
 		$license_key    = ! empty( $options['lewis_license_key'] ) ? trim( $options['lewis_license_key'] ) : false;
@@ -107,6 +111,7 @@ class Lewis_License_Settings {
 			$html .= '<input type="submit" class="button" name="lewis_activate_license" value="' . esc_attr__( 'Activate License', 'lewis' ) . '"/>';
 		}
 
+		// phpcs:ignore
 		echo $html;
 		wp_nonce_field( 'lewis_license_nonce', 'lewis_license_nonce' );
 	}
@@ -114,7 +119,7 @@ class Lewis_License_Settings {
 	/**
 	 * Activates the license key.
 	 */
-	static function activate_license() {
+	public static function activate_license() {
 
 		// Return early if not on Lewis admin page.
 		if ( ! isset( $_POST['lewis_theme_settings'] ) ) {
@@ -132,7 +137,7 @@ class Lewis_License_Settings {
 		}
 
 		// Get License key.
-		$license_key = ! empty( $_POST['lewis_theme_settings']['lewis_license_key'] ) ? sanitize_text_field( $_POST['lewis_theme_settings']['lewis_license_key'] ) : false;
+		$license_key = ! empty( $_POST['lewis_theme_settings']['lewis_license_key'] ) ? sanitize_text_field( wp_unslash( $_POST['lewis_theme_settings']['lewis_license_key'] ) ) : false;
 
 		// Return if no license key was entered.
 		if ( ! $license_key ) {
@@ -179,7 +184,7 @@ class Lewis_License_Settings {
 						$message = sprintf(
 							/* translators: the license key expiration date */
 							__( 'Your license key expired on %s.', 'lewis' ),
-							date_i18n( get_option( 'date_format' ), strtotime( $license_data->expires, current_time( 'timestamp' ) ) )
+							date_i18n( get_option( 'date_format' ), strtotime( $license_data->expires, time() ) )
 						);
 						break;
 
@@ -217,9 +222,9 @@ class Lewis_License_Settings {
 		if ( ! empty( $message ) ) {
 			$redirect = add_query_arg(
 				array(
-					'page'              => 'lewis-theme',
+					'page'             => 'lewis-theme',
 					'lewis_activation' => 'false',
-					'message'           => rawurlencode( $message ),
+					'message'          => rawurlencode( $message ),
 				),
 				admin_url( 'themes.php' )
 			);
@@ -246,7 +251,7 @@ class Lewis_License_Settings {
 	 * Deactivates the license key.
 	 * This will decrease the site count.
 	 */
-	static function deactivate_license() {
+	public static function deactivate_license() {
 
 		// Listen for our activate button to be clicked.
 		if ( ! isset( $_POST['lewis_deactivate_license'] ) ) {
@@ -262,12 +267,12 @@ class Lewis_License_Settings {
 		$options     = self::get_settings();
 		$license_key = ! empty( $options['lewis_license_key'] ) ? trim( $options['lewis_license_key'] ) : false;
 
-		// data to send in our API request
+		// Data to send in our API request.
 		$api_params = array(
 			'edd_action'  => 'deactivate_license',
 			'license'     => $license_key,
 			'item_id'     => LEWIS_THEME_ID,
-			'item_name'   => rawurlencode( LEWIS_THEME_NAME ), // the name of our product in EDD
+			'item_name'   => rawurlencode( LEWIS_THEME_NAME ),
 			'url'         => home_url(),
 			'environment' => function_exists( 'wp_get_environment_type' ) ? wp_get_environment_type() : 'production',
 		);
@@ -293,9 +298,9 @@ class Lewis_License_Settings {
 
 			$redirect = add_query_arg(
 				array(
-					'page'                  => 'lewis-theme',
+					'page'             => 'lewis-theme',
 					'lewis_activation' => 'false',
-					'message'               => rawurlencode( $message ),
+					'message'          => rawurlencode( $message ),
 				),
 				admin_url( 'themes.php' )
 			);
@@ -316,13 +321,16 @@ class Lewis_License_Settings {
 	/**
 	 * This is a means of catching errors from the activation method above and displaying it to the customer
 	 */
-	static function license_activated_notice() {
+	public static function license_activated_notice() {
+		// phpcs:ignore
 		if ( isset( $_GET['lewis_activation'] ) && ! empty( $_GET['message'] ) ) {
 
+			// phpcs:ignore
 			switch ( $_GET['lewis_activation'] ) {
 
 				case 'false':
-					$message = urldecode( $_GET['message'] );
+					// phpcs:ignore
+					$message = urldecode( sanitize_text_field( wp_unslash( $_GET['message'] ) ) );
 					?>
 					<div class="error">
 						<p><?php echo wp_kses_post( $message ); ?></p>
@@ -344,19 +352,21 @@ class Lewis_License_Settings {
 	 *
 	 * @return void
 	 */
-	static function theme_page_notice() {
+	public static function theme_page_notice() {
 		global $pagenow;
 		$options = self::get_settings();
 
-		if ( 'valid' !== $options['lewis_license_status'] && in_array( $pagenow, array( 'index.php', 'update-core.php', 'themes.php' ) ) && ! isset( $_GET['page'] ) && current_user_can( 'manage_options' ) ) :
+		 // phpcs:ignore
+		if ( 'valid' !== $options['lewis_license_status'] && in_array( $pagenow, array( 'index.php', 'update-core.php', 'themes.php' ), true ) && ! isset( $_GET['page'] ) && current_user_can( 'manage_options' ) ) :
 			?>
 
 			<div class="notice notice-info">
 				<p>
 					<?php
-					printf( __( 'Please enter your license key for the %1$s theme in order to receive updates and support. <a href="%2$s">Enter License Key</a>', 'lewis' ),
+					/* translators: %1$s: Theme name. %2$s: Link to theme settings. */
+					printf( __( 'Please enter your license key for the %1$s theme in order to receive updates and support. <a href="%2$s">Enter License Key</a>', 'lewis' ), // phpcs:ignore
 						'Lewis',
-						admin_url( 'themes.php?page=lewis-theme' )
+						esc_url( admin_url( 'themes.php?page=lewis-theme' ) )
 					);
 					?>
 				</p>
@@ -369,17 +379,18 @@ class Lewis_License_Settings {
 	/**
 	 * Disable requests to wp.org repository for this theme.
 	 *
-	 * @since 1.0.0
+	 * @param array  $parsed_args An array of HTTP request arguments.
+	 * @param string $url         The request URL.
 	 */
-	static function disable_wporg_request( $r, $url ) {
+	public static function disable_wporg_request( $parsed_args, $url ) {
 
 		// If it's not a theme update request, bail.
 		if ( 0 !== strpos( $url, 'https://api.wordpress.org/themes/update-check/1.1/' ) ) {
-			return $r;
+			return $parsed_args;
 		}
 
 		// Decode the JSON response.
-		$themes = json_decode( $r['body']['themes'] );
+		$themes = json_decode( $parsed_args['body']['themes'] );
 
 		// Remove the active parent and child themes from the check.
 		$parent = get_option( 'template' );
@@ -388,9 +399,9 @@ class Lewis_License_Settings {
 		unset( $themes->themes->$child );
 
 		// Encode the updated JSON response.
-		$r['body']['themes'] = json_encode( $themes );
+		$parsed_args['body']['themes'] = wp_json_encode( $themes );
 
-		return $r;
+		return $parsed_args;
 	}
 }
 

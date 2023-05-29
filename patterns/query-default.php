@@ -4,7 +4,10 @@
  * Slug: lewis/query-default
  * Block Types: core/query
  * Categories: query
-*/
+ *
+ * @package Lincoln
+ */
+
 ?>
 
 <!-- wp:query {"queryId":1,"query":{"perPage":3,"pages":0,"offset":0,"postType":"post","categoryIds":[],"tagIds":[],"order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true}} -->

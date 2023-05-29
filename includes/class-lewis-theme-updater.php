@@ -5,6 +5,7 @@
  * @package Lewis
  */
 
+// phpcs:disable
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
