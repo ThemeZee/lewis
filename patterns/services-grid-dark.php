@@ -4,7 +4,7 @@
  * Slug: lewis/services-grid-dark
  * Categories: lewis_services
  *
- * @package Lincoln
+ * @package Lewis
  */
 
 ?>

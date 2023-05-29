@@ -4,7 +4,7 @@
  * Slug: lewis/testimonials-list-dark
  * Categories: lewis_testimonials
  *
- * @package Lincoln
+ * @package Lewis
  */
 
 ?>

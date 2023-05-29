@@ -4,7 +4,7 @@
  * Slug: lewis/features-columns-dark
  * Categories: lewis_features
  *
- * @package Lincoln
+ * @package Lewis
  */
 
 ?>

@@ -4,7 +4,7 @@
  * Slug: lewis/features-numbers-light
  * Categories: lewis_features
  *
- * @package Lincoln
+ * @package Lewis
  */
 
 ?>

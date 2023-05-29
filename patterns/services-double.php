@@ -4,7 +4,7 @@
  * Slug: lewis/services-double
  * Categories: lewis_services
  *
- * @package Lincoln
+ * @package Lewis
  */
 
 ?>

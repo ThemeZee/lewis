@@ -4,7 +4,7 @@
  * Slug: lewis/postmeta
  * Inserter: no
  *
- * @package Lincoln
+ * @package Lewis
  */
 
 ?>

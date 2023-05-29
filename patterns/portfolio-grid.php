@@ -4,7 +4,7 @@
  * Slug: lewis/portfolio-grid
  * Categories: lewis_portfolio
  *
- * @package Lincoln
+ * @package Lewis
  */
 
 ?>

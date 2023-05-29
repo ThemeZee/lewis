@@ -5,7 +5,7 @@
  * Block Types: core/query
  * Categories: query
  *
- * @package Lincoln
+ * @package Lewis
  */
 
 ?>

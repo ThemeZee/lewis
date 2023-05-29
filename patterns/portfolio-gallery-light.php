@@ -4,7 +4,7 @@
  * Slug: lewis/portfolio-gallery-light
  * Categories: lewis_portfolio
  *
- * @package Lincoln
+ * @package Lewis
  */
 
 ?>

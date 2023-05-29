@@ -4,7 +4,7 @@
  * Slug: lewis/team-grid
  * Categories: lewis_team
  *
- * @package Lincoln
+ * @package Lewis
  */
 
 ?>

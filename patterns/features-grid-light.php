@@ -4,7 +4,7 @@
  * Slug: lewis/features-grid-light
  * Categories: lewis_features
  *
- * @package Lincoln
+ * @package Lewis
  */
 
 ?>

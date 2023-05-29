@@ -4,7 +4,7 @@
  * Slug: lewis/media-text-right
  * Categories: lewis_media_text
  *
- * @package Lincoln
+ * @package Lewis
  */
 
 ?>

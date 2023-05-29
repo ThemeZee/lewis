@@ -4,7 +4,7 @@
  * Slug: lewis/hero-boxes
  * Categories: lewis_hero
  *
- * @package Lincoln
+ * @package Lewis
  */
 
 ?>

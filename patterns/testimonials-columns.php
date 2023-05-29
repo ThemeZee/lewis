@@ -4,7 +4,7 @@
  * Slug: lewis/testimonials-columns
  * Categories: lewis_testimonials
  *
- * @package Lincoln
+ * @package Lewis
  */
 
 ?>

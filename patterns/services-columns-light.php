@@ -4,7 +4,7 @@
  * Slug: lewis/services-columns-light
  * Categories: lewis_services
  *
- * @package Lincoln
+ * @package Lewis
  */
 
 ?>

@@ -4,7 +4,7 @@
  * Slug: lewis/team-columns-light
  * Categories: lewis_team
  *
- * @package Lincoln
+ * @package Lewis
  */
 
 ?>

@@ -4,7 +4,7 @@
  * Slug: lewis/call-to-action-horizontal-dark
  * Categories: lewis_cta
  *
- * @package Lincoln
+ * @package Lewis
  */
 
 ?>

@@ -4,7 +4,7 @@
  * Slug: lewis/portfolio-columns
  * Categories: lewis_portfolio
  *
- * @package Lincoln
+ * @package Lewis
  */
 
 ?>

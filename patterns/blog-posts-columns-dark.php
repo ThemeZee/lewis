@@ -4,7 +4,7 @@
  * Slug: lewis/blog-posts-columns-dark
  * Categories: lewis_blog
  *
- * @package Lincoln
+ * @package Lewis
  */
 
 ?>

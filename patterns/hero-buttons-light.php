@@ -4,7 +4,7 @@
  * Slug: lewis/hero-buttons-light
  * Categories: lewis_hero
  *
- * @package Lincoln
+ * @package Lewis
  */
 
 ?>

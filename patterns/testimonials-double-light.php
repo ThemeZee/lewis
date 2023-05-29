@@ -4,7 +4,7 @@
  * Slug: lewis/testimonials-double-light
  * Categories: lewis_testimonials
  *
- * @package Lincoln
+ * @package Lewis
  */
 
 ?>

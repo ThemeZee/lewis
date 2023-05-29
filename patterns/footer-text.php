@@ -4,7 +4,7 @@
  * Slug: lewis/footer-text
  * Inserter: no
  *
- * @package Lincoln
+ * @package Lewis
  */
 
 ?>
