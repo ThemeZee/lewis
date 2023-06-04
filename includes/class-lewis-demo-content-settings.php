@@ -116,12 +116,13 @@ class Lewis_Demo_Content_Settings {
 			self::create_demo_pages();
 		}
 
+		$categories = array();
 		if ( ! empty( $_POST['lewis_theme_settings']['lewis_demo_content']['categories'] ) ) {
-			// Import categories.
+			$categories = self::create_demo_categories();
 		}
 
 		if ( ! empty( $_POST['lewis_theme_settings']['lewis_demo_content']['posts'] ) ) {
-			self::create_demo_posts();
+			self::create_demo_posts( $categories );
 		}
 
 		wp_safe_redirect( admin_url( 'themes.php?page=lewis-theme' ) );
@@ -169,9 +170,29 @@ class Lewis_Demo_Content_Settings {
 	}
 
 	/**
-	 * Create demo posts.
+	 * Create demo categories.
 	 */
-	private static function create_demo_posts() {
+	private static function create_demo_categories() {
+		$categories = array();
+
+		foreach ( array(
+			'Business',
+			'Lifestyle',
+			'Technology',
+		) as $title ) :
+			$term         = wp_create_term( $title, 'category' );
+			$categories[] = $term['term_id'];
+		endforeach;
+
+		return $categories;
+	}
+
+	/**
+	 * Create demo posts.
+	 *
+	 * @param array $categories Category ids.
+	 */
+	private static function create_demo_posts( $categories ) {
 		foreach ( array(
 			'Proin quis odio at augue feugiat rutrum non id lacus',
 			'Nam gravida nisi lacus, nec dignissim tortor gravida at. Fusce sed ante id',
@@ -181,11 +202,12 @@ class Lewis_Demo_Content_Settings {
 		) as $title ) :
 			wp_insert_post(
 				array(
-					'post_title'   => $title,
-					'post_content' => self::load_demo_content( 'post' ),
-					'post_type'    => 'post',
-					'post_status'  => 'publish',
-					'post_author'  => get_current_user_id(),
+					'post_title'    => $title,
+					'post_content'  => self::load_demo_content( 'post' ),
+					'post_type'     => 'post',
+					'post_status'   => 'publish',
+					'post_author'   => get_current_user_id(),
+					'post_category' => array( $categories[ wp_rand( 0, count( $categories ) - 1 ) ] ),
 				)
 			);
 		endforeach;
