@@ -193,6 +193,8 @@ class Lewis_Demo_Content_Settings {
 	 * @param array $categories Category ids.
 	 */
 	private static function create_demo_posts( $categories ) {
+		$image_id = self::load_demo_image();
+
 		foreach ( array(
 			'Proin quis odio at augue feugiat rutrum non id lacus',
 			'Nam gravida nisi lacus, nec dignissim tortor gravida at. Fusce sed ante id',
@@ -200,7 +202,7 @@ class Lewis_Demo_Content_Settings {
 			'Morbi ut molestie velit, iaculis pharetra metus. Sed viverra nibh',
 			'Pellentesque convallis malesuada pharetra. Proin rhoncus dolor',
 		) as $title ) :
-			wp_insert_post(
+			$post = wp_insert_post(
 				array(
 					'post_title'    => $title,
 					'post_content'  => self::load_demo_content( 'post' ),
@@ -210,7 +212,36 @@ class Lewis_Demo_Content_Settings {
 					'post_category' => array( $categories[ wp_rand( 0, count( $categories ) - 1 ) ] ),
 				)
 			);
+			if ( $image_id > 0 ) {
+				set_post_thumbnail( $post, $image_id );
+			}
 		endforeach;
+	}
+
+	/**
+	 * Create demo image.
+	 *
+	 * @throws Exception Error creating images.
+	 */
+	private static function load_demo_image() {
+		$file = 'https://preview.themezee.com/wp-content/themes/lewis/assets/img/portfolio-image.png';
+
+		$file_array = array(
+			'name'     => 'lewis-demo-image.png',
+			'tmp_name' => download_url( $file ),
+		);
+
+		if ( is_wp_error( $file_array['tmp_name'] ) ) {
+			throw new Exception();
+		}
+
+		$id = media_handle_sideload( $file_array, 0 );
+
+		if ( is_wp_error( $id ) ) {
+			throw new Exception();
+		}
+
+		return $id;
 	}
 
 	/**
