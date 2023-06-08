@@ -39,7 +39,6 @@ class Lewis_Demo_Content_Settings {
 				'categories' => 1,
 				'image'      => 1,
 				'pages'      => 1,
-				'frontpage'  => 1,
 			),
 		);
 
@@ -62,7 +61,6 @@ class Lewis_Demo_Content_Settings {
 					'categories' => esc_html__( 'Categories (3)', 'lewis' ),
 					'image'      => esc_html__( 'Featured Image (1)', 'lewis' ),
 					'pages'      => esc_html__( 'Static Pages (4)', 'lewis' ),
-					'frontpage'  => esc_html__( 'Set demo page as homepage', 'lewis' ),
 				),
 			)
 		);
@@ -146,9 +144,8 @@ class Lewis_Demo_Content_Settings {
 		}
 
 		if ( ! empty( $_POST['lewis_theme_settings']['lewis_demo_content']['pages'] ) ) {
-			$update_frontpage = ! empty( $_POST['lewis_theme_settings']['lewis_demo_content']['frontpage'] );
 			try {
-				self::create_demo_pages( $update_frontpage );
+				self::create_demo_pages();
 				add_settings_error( 'lewis_theme_settings_notices', 'demo_import_pages', esc_html__( 'Static pages were successfully imported.', 'lewis' ), 'success' );
 			} catch ( Exception ) {
 				add_settings_error( 'lewis_theme_settings_notices', 'demo_import_pages', esc_html__( 'Static pages could not be imported.', 'lewis' ), 'error' );
@@ -234,10 +231,8 @@ class Lewis_Demo_Content_Settings {
 
 	/**
 	 * Create demo pages.
-	 *
-	 * @param boolean $update_frontpage Should the front page be updated?.
 	 */
-	private static function create_demo_pages( $update_frontpage ) {
+	private static function create_demo_pages() {
 		$home = wp_insert_post(
 			array(
 				'post_title'    => 'Home',
@@ -281,11 +276,9 @@ class Lewis_Demo_Content_Settings {
 			)
 		);
 
-		if ( $update_frontpage ) {
-			update_option( 'page_on_front', $home );
-			update_option( 'page_for_posts', $blog );
-			update_option( 'show_on_front', 'page' );
-		}
+		update_option( 'page_on_front', $home );
+		update_option( 'page_for_posts', $blog );
+		update_option( 'show_on_front', 'page' );
 	}
 
 	/**
