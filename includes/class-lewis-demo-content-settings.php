@@ -57,10 +57,14 @@ class Lewis_Demo_Content_Settings {
 			'lewis_demo_section',
 			array(
 				'options' => array(
-					'posts'      => esc_html__( 'Blog Posts (5)', 'lewis' ),
-					'categories' => esc_html__( 'Categories (3)', 'lewis' ),
-					'image'      => esc_html__( 'Featured Image (1)', 'lewis' ),
-					'pages'      => esc_html__( 'Static Pages (4)', 'lewis' ),
+					/* translators: number of blog posts to be imported */
+					'posts'      => sprintf( esc_html__( 'Blog Posts (%s)', 'lewis' ), 5 ),
+					/* translators: number of categories to be imported */
+					'categories' => sprintf( esc_html__( 'Categories (%s)', 'lewis' ), 3 ),
+					/* translators: number of imges to be imported */
+					'image'      => sprintf( esc_html__( 'Featured Images (%s)', 'lewis' ), 1 ),
+					/* translators: number of static pages to be imported */
+					'pages'      => sprintf( esc_html__( 'Static Pages (%s)', 'lewis' ), 4 ),
 				),
 			)
 		);
