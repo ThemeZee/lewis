@@ -35,9 +35,10 @@ class Lewis_Demo_Content_Settings {
 	public static function get_settings() {
 		$default_settings = array(
 			'lewis_demo_content' => array(
-				'pages'      => 1,
 				'posts'      => 1,
 				'categories' => 1,
+				'pages'      => 1,
+				'frontpage'  => 1,
 			),
 		);
 
@@ -56,9 +57,10 @@ class Lewis_Demo_Content_Settings {
 			'lewis_demo_section',
 			array(
 				'options' => array(
-					'pages'      => esc_html__( 'Static Pages (4)', 'lewis' ),
 					'posts'      => esc_html__( 'Blog Posts (5)', 'lewis' ),
 					'categories' => esc_html__( 'Categories (3)', 'lewis' ),
+					'pages'      => esc_html__( 'Static Pages (4)', 'lewis' ),
+					'frontpage'  => esc_html__( 'Set demo page as homepage', 'lewis' ),
 				),
 			)
 		);
@@ -112,10 +114,6 @@ class Lewis_Demo_Content_Settings {
 			return;
 		}
 
-		if ( ! empty( $_POST['lewis_theme_settings']['lewis_demo_content']['pages'] ) ) {
-			self::create_demo_pages();
-		}
-
 		$categories = array();
 		if ( ! empty( $_POST['lewis_theme_settings']['lewis_demo_content']['categories'] ) ) {
 			$categories = self::create_demo_categories();
@@ -125,59 +123,12 @@ class Lewis_Demo_Content_Settings {
 			self::create_demo_posts( $categories );
 		}
 
+		if ( ! empty( $_POST['lewis_theme_settings']['lewis_demo_content']['pages'] ) ) {
+			$update_frontpage = ! empty( $_POST['lewis_theme_settings']['lewis_demo_content']['frontpage'] );
+			self::create_demo_pages( $update_frontpage );
+		}
+
 		wp_safe_redirect( admin_url( 'themes.php?page=lewis-theme' ) );
-	}
-
-	/**
-	 * Create demo pages.
-	 */
-	private static function create_demo_pages() {
-		$home = wp_insert_post(
-			array(
-				'post_title'    => 'Home',
-				'post_content'  => self::load_demo_content( 'home' ),
-				'post_type'     => 'page',
-				'post_status'   => 'publish',
-				'post_author'   => get_current_user_id(),
-				'page_template' => 'page-no-title',
-			)
-		);
-
-		$services = wp_insert_post(
-			array(
-				'post_title'    => 'Services',
-				'post_content'  => self::load_demo_content( 'services' ),
-				'post_type'     => 'page',
-				'post_status'   => 'publish',
-				'post_author'   => get_current_user_id(),
-				'page_template' => 'page-no-title',
-			)
-		);
-
-		$about = wp_insert_post(
-			array(
-				'post_title'    => 'About',
-				'post_content'  => self::load_demo_content( 'about' ),
-				'post_type'     => 'page',
-				'post_status'   => 'publish',
-				'post_author'   => get_current_user_id(),
-				'page_template' => 'page-no-title',
-			)
-		);
-
-		$blog = wp_insert_post(
-			array(
-				'post_title'   => 'Blog',
-				'post_content' => '',
-				'post_type'    => 'page',
-				'post_status'  => 'publish',
-				'post_author'  => get_current_user_id(),
-			)
-		);
-
-		update_option( 'page_on_front', $home );
-		update_option( 'page_for_posts', $blog );
-		update_option( 'show_on_front', 'page' );
 	}
 
 	/**
@@ -227,6 +178,62 @@ class Lewis_Demo_Content_Settings {
 				set_post_thumbnail( $post, $image_id );
 			}
 		endforeach;
+	}
+
+	/**
+	 * Create demo pages.
+	 *
+	 * @param boolean $update_frontpage Should the front page be updated?.
+	 */
+	private static function create_demo_pages( $update_frontpage ) {
+		$home = wp_insert_post(
+			array(
+				'post_title'    => 'Home',
+				'post_content'  => self::load_demo_content( 'home' ),
+				'post_type'     => 'page',
+				'post_status'   => 'publish',
+				'post_author'   => get_current_user_id(),
+				'page_template' => 'page-no-title',
+			)
+		);
+
+		$services = wp_insert_post(
+			array(
+				'post_title'    => 'Services',
+				'post_content'  => self::load_demo_content( 'services' ),
+				'post_type'     => 'page',
+				'post_status'   => 'publish',
+				'post_author'   => get_current_user_id(),
+				'page_template' => 'page-no-title',
+			)
+		);
+
+		$about = wp_insert_post(
+			array(
+				'post_title'    => 'About',
+				'post_content'  => self::load_demo_content( 'about' ),
+				'post_type'     => 'page',
+				'post_status'   => 'publish',
+				'post_author'   => get_current_user_id(),
+				'page_template' => 'page-no-title',
+			)
+		);
+
+		$blog = wp_insert_post(
+			array(
+				'post_title'   => 'Blog',
+				'post_content' => '',
+				'post_type'    => 'page',
+				'post_status'  => 'publish',
+				'post_author'  => get_current_user_id(),
+			)
+		);
+
+		if ( $update_frontpage ) {
+			update_option( 'page_on_front', $home );
+			update_option( 'page_for_posts', $blog );
+			update_option( 'show_on_front', 'page' );
+		}
 	}
 
 	/**
