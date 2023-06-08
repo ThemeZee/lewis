@@ -132,9 +132,9 @@ class Lewis_Demo_Content_Settings {
 		if ( ! empty( $_POST['lewis_theme_settings']['lewis_demo_content']['image'] ) ) {
 			try {
 				$image_id = self::create_demo_image();
-				add_settings_error( 'lewis_theme_settings_notices', 'demo_import_image', esc_html__( 'Featured image was successfully imported.', 'lewis' ), 'success' );
+				add_settings_error( 'lewis_theme_settings_notices', 'demo_import_image', esc_html__( 'Featured images were successfully imported.', 'lewis' ), 'success' );
 			} catch ( Exception ) {
-				add_settings_error( 'lewis_theme_settings_notices', 'demo_import_image', esc_html__( 'Featured image could not be imported.', 'lewis' ), 'error' );
+				add_settings_error( 'lewis_theme_settings_notices', 'demo_import_image', esc_html__( 'Featured images could not be imported.', 'lewis' ), 'error' );
 			}
 		}
 
