@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Lewis\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
-"POT-Creation-Date: 2022-12-12 13:13+0100\n"
-"PO-Revision-Date: 2022-12-12 13:23+0100\n"
+"POT-Creation-Date: 2023-06-08 16:01+0200\n"
+"PO-Revision-Date: 2023-06-08 16:05+0200\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
 "Language: de_DE\n"
@@ -16,67 +16,67 @@ msgstr ""
 "X-Generator: Poedit 3.2.2\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-#: functions.php:68
+#: functions.php:71
 msgid "Lewis: Hero"
 msgstr "Lewis: Hero"
 
-#: functions.php:69
+#: functions.php:72
 msgid "Lewis: Call to Action"
 msgstr "Lewis: Call to Action"
 
-#: functions.php:70
+#: functions.php:73
 msgid "Lewis: Features"
 msgstr "Lewis: Features"
 
-#: functions.php:71
+#: functions.php:74
 msgid "Lewis: Media Text"
 msgstr "Lewis: Media Text"
 
-#: functions.php:72
+#: functions.php:75
 msgid "Lewis: Portfolio"
 msgstr "Lewis: Portfolio"
 
-#: functions.php:73
+#: functions.php:76
 msgid "Lewis: Services"
 msgstr "Lewis: Services"
 
-#: functions.php:74
+#: functions.php:77
 msgid "Lewis: Testimonials"
 msgstr "Lewis: Testimonials"
 
-#: functions.php:75
+#: functions.php:78
 msgid "Lewis: Team"
 msgstr "Lewis: Team"
 
-#: functions.php:76
+#: functions.php:79
 msgid "Lewis: Blog Posts"
 msgstr "Lewis: News"
 
-#: functions.php:103
+#: functions.php:108
 msgid "Main Navigation"
 msgstr "Hauptnavigation"
 
-#: functions.php:110
+#: functions.php:118
 msgid "Footer Navigation"
 msgstr "Footer Navigation"
 
-#: functions.php:117
+#: functions.php:128
 msgid "Inherit Colors"
 msgstr "Farben erben"
 
-#: functions.php:124
+#: functions.php:138
 msgid "Primary Hover"
 msgstr "Primär-Hover"
 
-#: functions.php:131
+#: functions.php:148
 msgid "Thin Line"
 msgstr "Dünne Linie"
 
-#: functions.php:138
+#: functions.php:156
 msgid "Underlined"
 msgstr "Unterstrichen"
 
-#: functions.php:193
+#: functions.php:213
 #, php-format
 msgid ""
 "Version %2$s of %1$s is available. <a href=\"%3$s\">View changelog of %4$s</"
@@ -85,7 +85,7 @@ msgstr ""
 "Version %2$s von %1$s ist verfügbar. <a href=„%3$s“>Changelog von %4$s "
 "ansehen</a> oder <a href=„%5$s“ %6$s>jetzt aktualisieren</a>."
 
-#: functions.php:194
+#: functions.php:214
 msgid ""
 "Updating this theme will override all theme files. Click \"Cancel\" to stop, "
 "\"OK\" to update."
@@ -93,90 +93,160 @@ msgstr ""
 "Durch das Update dieses Themas werden alle Thame-Dateien überschrieben. "
 "Klicke auf „Abbrechen“, um zu stoppen, auf „OK“, um zu aktualisieren."
 
-#: includes/class-lewis-admin-page.php:37
-#: includes/class-lewis-admin-page.php:38
-msgid "Theme License"
-msgstr "Theme Lizenz"
+#: includes/class-lewis-admin-page.php:40
+#: includes/class-lewis-admin-page.php:41
+msgid "Theme Setup"
+msgstr "Theme Optionen"
 
-#: includes/class-lewis-admin-page.php:54
+#: includes/class-lewis-admin-page.php:57
 msgid "Lewis"
 msgstr "Lewis"
 
-#: includes/class-lewis-admin-page.php:83
+#: includes/class-lewis-admin-page.php:87
+msgid "Demo Content"
+msgstr "Demo-Content"
+
+#: includes/class-lewis-admin-page.php:95
 msgid "License Settings"
 msgstr "Lizenzeinstellungen"
 
-#: includes/class-lewis-admin-page.php:100
+#: includes/class-lewis-admin-page.php:112
+msgid "Import the demo content into your website to get started quickly."
+msgstr ""
+"Importiere den Demo-Content in deine Website, um schnell loslegen zu können."
+
+#: includes/class-lewis-admin-page.php:119
 msgid "An active license key is needed to install updates and receive support."
 msgstr ""
 "Eine aktive Lizenz wird benötigt, um automatische Updates und Support zu "
 "erhalten."
 
-#: includes/class-lewis-license-settings.php:57
+#: includes/class-lewis-demo-content-settings.php:54
+#: includes/class-lewis-demo-content-settings.php:94
+msgid "Import Content"
+msgstr "Content importieren"
+
+#: includes/class-lewis-demo-content-settings.php:61
+#, php-format
+msgid "Blog Posts (%s)"
+msgstr "Blog-Beiträge (%s)"
+
+#: includes/class-lewis-demo-content-settings.php:63
+#, php-format
+msgid "Categories (%s)"
+msgstr "Kategorien (%s)"
+
+#: includes/class-lewis-demo-content-settings.php:65
+#, php-format
+msgid "Featured Images (%s)"
+msgstr "Beitragsbilder (%s)"
+
+#: includes/class-lewis-demo-content-settings.php:67
+#, php-format
+msgid "Static Pages (%s)"
+msgstr "Statische Seiten (%s)"
+
+#: includes/class-lewis-demo-content-settings.php:125
+msgid "Categories were successfully imported."
+msgstr "Die Kategorien wurden erfolgreich importiert."
+
+#: includes/class-lewis-demo-content-settings.php:127
+msgid "Categories could not be imported."
+msgstr "Kategorien konnten nicht importiert werden."
+
+#: includes/class-lewis-demo-content-settings.php:135
+msgid "Featured images were successfully imported."
+msgstr "Die Beitragsbilder wurden erfolgreich importiert."
+
+#: includes/class-lewis-demo-content-settings.php:137
+msgid "Featured images could not be imported."
+msgstr "Beitragsbilder konnten nicht importiert werden."
+
+#: includes/class-lewis-demo-content-settings.php:144
+msgid "Blog Posts were successfully imported."
+msgstr "Die Blog-Beiträge wurden erfolgreich importiert."
+
+#: includes/class-lewis-demo-content-settings.php:146
+msgid "Blog Posts could not be imported."
+msgstr "Blog-Beiträge konnten nicht importiert werden."
+
+#: includes/class-lewis-demo-content-settings.php:153
+msgid "Static pages were successfully imported."
+msgstr "Die statischen Seiten wurden erfolgreich importiert."
+
+#: includes/class-lewis-demo-content-settings.php:155
+msgid "Static pages could not be imported."
+msgstr "Statische Seiten konnten nicht importiert werden."
+
+#: includes/class-lewis-license-settings.php:59
 msgid "License Status"
 msgstr "Lizenzstatus"
 
-#: includes/class-lewis-license-settings.php:66
+#: includes/class-lewis-license-settings.php:68
 msgid "License Key"
 msgstr "Lizenzschlüssel"
 
-#: includes/class-lewis-license-settings.php:83
+#: includes/class-lewis-license-settings.php:85
 msgid "Active"
 msgstr "Aktiv"
 
-#: includes/class-lewis-license-settings.php:84
+#: includes/class-lewis-license-settings.php:86
 msgid "You are receiving updates."
 msgstr "Du erhältst Updates."
 
-#: includes/class-lewis-license-settings.php:86
+#: includes/class-lewis-license-settings.php:88
 msgid "Inactive"
 msgstr "Inaktiv"
 
-#: includes/class-lewis-license-settings.php:87
+#: includes/class-lewis-license-settings.php:89
 msgid "Please activate your license."
 msgstr "Bitte aktiviere deine Lizenz."
 
-#: includes/class-lewis-license-settings.php:104
+#: includes/class-lewis-license-settings.php:107
 msgid "Deactivate License"
 msgstr "Lizenz deaktivieren"
 
-#: includes/class-lewis-license-settings.php:107
+#: includes/class-lewis-license-settings.php:110
 msgid "Activate License"
 msgstr "Lizenz aktivieren"
 
-#: includes/class-lewis-license-settings.php:168
-#: includes/class-lewis-license-settings.php:210
-#: includes/class-lewis-license-settings.php:291
+#: includes/class-lewis-license-settings.php:172
+#: includes/class-lewis-license-settings.php:218
+#: includes/class-lewis-license-settings.php:286
 msgid "An error occurred, please try again."
 msgstr "Ein Fehler ist aufgetreten, bitte versuche es erneut."
 
-#: includes/class-lewis-license-settings.php:181
+#: includes/class-lewis-license-settings.php:187
 #, php-format
 msgid "Your license key expired on %s."
 msgstr "Dein Lizenzschlüssel läuft am %s ab."
 
-#: includes/class-lewis-license-settings.php:188
+#: includes/class-lewis-license-settings.php:195
 msgid "Your license key has been disabled."
 msgstr "Dein Lizenzschlüssel wurde deaktiviert."
 
-#: includes/class-lewis-license-settings.php:192
-msgid "Invalid license."
-msgstr "Ungültige Lizenz."
+#: includes/class-lewis-license-settings.php:199
+msgid "Invalid license key."
+msgstr "Ungültiger Lizenzschlüssel."
 
-#: includes/class-lewis-license-settings.php:197
+#: includes/class-lewis-license-settings.php:204
 msgid "Your license is not active for this URL."
 msgstr "Deine Lizenz ist für diese URL nicht aktiv."
 
-#: includes/class-lewis-license-settings.php:202
+#: includes/class-lewis-license-settings.php:209
 #, php-format
 msgid "This appears to be an invalid license key for %s."
 msgstr "Dies scheint ein ungültiger Lizenzschlüssel für %s zu sein."
 
-#: includes/class-lewis-license-settings.php:206
+#: includes/class-lewis-license-settings.php:214
 msgid "Your license key has reached its activation limit."
 msgstr "Dein Lizenzschlüssel hat das Seitenlimit erreicht."
 
-#: includes/class-lewis-license-settings.php:357
+#: includes/class-lewis-license-settings.php:232
+msgid "License was successfully activated."
+msgstr "Die Lizenz wurde erfolgreich aktiviert."
+
+#: includes/class-lewis-license-settings.php:317
 #, php-format
 msgid ""
 "Please enter your license key for the %1$s theme in order to receive updates "
@@ -186,25 +256,28 @@ msgstr ""
 "Updates und Support zu erhalten. <a href=\"%2$s\">Lizenzschlüssel eingeben</"
 "a>"
 
-#: patterns/footer-text.php:14
+#: patterns/footer-text.php:17
 msgid "Privacy Policy"
 msgstr "Datenschutzerklärung"
 
-#: patterns/footer-text.php:14
+#: patterns/footer-text.php:17
 msgid "Imprint"
 msgstr "Impressum"
 
-#: patterns/postmeta-date.php:13 patterns/postmeta.php:13
+#: patterns/postmeta-date.php:16 patterns/postmeta.php:16
 msgid "Posted on"
 msgstr "Veröffentlicht am"
 
-#: patterns/postmeta.php:19
+#: patterns/postmeta.php:22
 msgid "by"
 msgstr "von"
 
-#: patterns/postmeta.php:24
+#: patterns/postmeta.php:27
 msgid "in"
 msgstr "in"
+
+#~ msgid "Theme License"
+#~ msgstr "Theme Lizenz"
 
 #~ msgid "Dismiss Notice"
 #~ msgstr "Nachricht verbergen"
@@ -473,9 +546,6 @@ msgstr "in"
 #~ msgid "Appears below single posts."
 #~ msgstr "Erscheint unter einzelnen Beiträgen."
 
-#~ msgid "After Static Pages"
-#~ msgstr "Nach statischen Seiten"
-
 #~ msgctxt "widget area description"
 #~ msgid "Appears below static pages."
 #~ msgstr "Erscheint unter statischen Seiten."
@@ -499,9 +569,6 @@ msgstr "in"
 
 #~ msgid "Category:"
 #~ msgstr "Kategorie:"
-
-#~ msgid "All Categories"
-#~ msgstr "Alle Kategorien"
 
 #~ msgid "Magazine (List)"
 #~ msgstr "Magazin (Liste)"

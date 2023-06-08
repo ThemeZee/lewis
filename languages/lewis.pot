@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Lewis\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
-"POT-Creation-Date: 2022-12-12 13:13+0100\n"
+"POT-Creation-Date: 2023-06-08 16:01+0200\n"
 "PO-Revision-Date: 2016-05-31 09:50+0100\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
@@ -22,183 +22,252 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: node_modules\n"
 
-#: functions.php:68
+#: functions.php:71
 msgid "Lewis: Hero"
 msgstr ""
 
-#: functions.php:69
+#: functions.php:72
 msgid "Lewis: Call to Action"
 msgstr ""
 
-#: functions.php:70
+#: functions.php:73
 msgid "Lewis: Features"
 msgstr ""
 
-#: functions.php:71
+#: functions.php:74
 msgid "Lewis: Media Text"
 msgstr ""
 
-#: functions.php:72
+#: functions.php:75
 msgid "Lewis: Portfolio"
 msgstr ""
 
-#: functions.php:73
+#: functions.php:76
 msgid "Lewis: Services"
 msgstr ""
 
-#: functions.php:74
+#: functions.php:77
 msgid "Lewis: Testimonials"
 msgstr ""
 
-#: functions.php:75
+#: functions.php:78
 msgid "Lewis: Team"
 msgstr ""
 
-#: functions.php:76
+#: functions.php:79
 msgid "Lewis: Blog Posts"
 msgstr ""
 
-#: functions.php:103
+#: functions.php:108
 msgid "Main Navigation"
 msgstr ""
 
-#: functions.php:110
+#: functions.php:118
 msgid "Footer Navigation"
 msgstr ""
 
-#: functions.php:117
+#: functions.php:128
 msgid "Inherit Colors"
 msgstr ""
 
-#: functions.php:124
+#: functions.php:138
 msgid "Primary Hover"
 msgstr ""
 
-#: functions.php:131
+#: functions.php:148
 msgid "Thin Line"
 msgstr ""
 
-#: functions.php:138
+#: functions.php:156
 msgid "Underlined"
 msgstr ""
 
-#: functions.php:193
+#: functions.php:213
 #, php-format
 msgid ""
 "Version %2$s of %1$s is available. <a href=\"%3$s\">View changelog of %4$s</"
 "a> or <a href=\"%5$s\" %6$s>update now</a>."
 msgstr ""
 
-#: functions.php:194
+#: functions.php:214
 msgid ""
 "Updating this theme will override all theme files. Click \"Cancel\" to stop, "
 "\"OK\" to update."
 msgstr ""
 
-#: includes/class-lewis-admin-page.php:37
-#: includes/class-lewis-admin-page.php:38
-msgid "Theme License"
+#: includes/class-lewis-admin-page.php:40
+#: includes/class-lewis-admin-page.php:41
+msgid "Theme Setup"
 msgstr ""
 
-#: includes/class-lewis-admin-page.php:54
+#: includes/class-lewis-admin-page.php:57
 msgid "Lewis"
 msgstr ""
 
-#: includes/class-lewis-admin-page.php:83
+#: includes/class-lewis-admin-page.php:87
+msgid "Demo Content"
+msgstr ""
+
+#: includes/class-lewis-admin-page.php:95
 msgid "License Settings"
 msgstr ""
 
-#: includes/class-lewis-admin-page.php:100
+#: includes/class-lewis-admin-page.php:112
+msgid "Import the demo content into your website to get started quickly."
+msgstr ""
+
+#: includes/class-lewis-admin-page.php:119
 msgid "An active license key is needed to install updates and receive support."
 msgstr ""
 
-#: includes/class-lewis-license-settings.php:57
+#: includes/class-lewis-demo-content-settings.php:54
+#: includes/class-lewis-demo-content-settings.php:94
+msgid "Import Content"
+msgstr ""
+
+#: includes/class-lewis-demo-content-settings.php:61
+#, php-format
+msgid "Blog Posts (%s)"
+msgstr ""
+
+#: includes/class-lewis-demo-content-settings.php:63
+#, php-format
+msgid "Categories (%s)"
+msgstr ""
+
+#: includes/class-lewis-demo-content-settings.php:65
+#, php-format
+msgid "Featured Images (%s)"
+msgstr ""
+
+#: includes/class-lewis-demo-content-settings.php:67
+#, php-format
+msgid "Static Pages (%s)"
+msgstr ""
+
+#: includes/class-lewis-demo-content-settings.php:125
+msgid "Categories were successfully imported."
+msgstr ""
+
+#: includes/class-lewis-demo-content-settings.php:127
+msgid "Categories could not be imported."
+msgstr ""
+
+#: includes/class-lewis-demo-content-settings.php:135
+msgid "Featured images were successfully imported."
+msgstr ""
+
+#: includes/class-lewis-demo-content-settings.php:137
+msgid "Featured images could not be imported."
+msgstr ""
+
+#: includes/class-lewis-demo-content-settings.php:144
+msgid "Blog Posts were successfully imported."
+msgstr ""
+
+#: includes/class-lewis-demo-content-settings.php:146
+msgid "Blog Posts could not be imported."
+msgstr ""
+
+#: includes/class-lewis-demo-content-settings.php:153
+msgid "Static pages were successfully imported."
+msgstr ""
+
+#: includes/class-lewis-demo-content-settings.php:155
+msgid "Static pages could not be imported."
+msgstr ""
+
+#: includes/class-lewis-license-settings.php:59
 msgid "License Status"
 msgstr ""
 
-#: includes/class-lewis-license-settings.php:66
+#: includes/class-lewis-license-settings.php:68
 msgid "License Key"
 msgstr ""
 
-#: includes/class-lewis-license-settings.php:83
+#: includes/class-lewis-license-settings.php:85
 msgid "Active"
 msgstr ""
 
-#: includes/class-lewis-license-settings.php:84
+#: includes/class-lewis-license-settings.php:86
 msgid "You are receiving updates."
 msgstr ""
 
-#: includes/class-lewis-license-settings.php:86
+#: includes/class-lewis-license-settings.php:88
 msgid "Inactive"
 msgstr ""
 
-#: includes/class-lewis-license-settings.php:87
+#: includes/class-lewis-license-settings.php:89
 msgid "Please activate your license."
 msgstr ""
 
-#: includes/class-lewis-license-settings.php:104
+#: includes/class-lewis-license-settings.php:107
 msgid "Deactivate License"
 msgstr ""
 
-#: includes/class-lewis-license-settings.php:107
+#: includes/class-lewis-license-settings.php:110
 msgid "Activate License"
 msgstr ""
 
-#: includes/class-lewis-license-settings.php:168
-#: includes/class-lewis-license-settings.php:210
-#: includes/class-lewis-license-settings.php:291
+#: includes/class-lewis-license-settings.php:172
+#: includes/class-lewis-license-settings.php:218
+#: includes/class-lewis-license-settings.php:286
 msgid "An error occurred, please try again."
 msgstr ""
 
-#: includes/class-lewis-license-settings.php:181
+#: includes/class-lewis-license-settings.php:187
 #, php-format
 msgid "Your license key expired on %s."
 msgstr ""
 
-#: includes/class-lewis-license-settings.php:188
+#: includes/class-lewis-license-settings.php:195
 msgid "Your license key has been disabled."
 msgstr ""
 
-#: includes/class-lewis-license-settings.php:192
-msgid "Invalid license."
+#: includes/class-lewis-license-settings.php:199
+msgid "Invalid license key."
 msgstr ""
 
-#: includes/class-lewis-license-settings.php:197
+#: includes/class-lewis-license-settings.php:204
 msgid "Your license is not active for this URL."
 msgstr ""
 
-#: includes/class-lewis-license-settings.php:202
+#: includes/class-lewis-license-settings.php:209
 #, php-format
 msgid "This appears to be an invalid license key for %s."
 msgstr ""
 
-#: includes/class-lewis-license-settings.php:206
+#: includes/class-lewis-license-settings.php:214
 msgid "Your license key has reached its activation limit."
 msgstr ""
 
-#: includes/class-lewis-license-settings.php:357
+#: includes/class-lewis-license-settings.php:232
+msgid "License was successfully activated."
+msgstr ""
+
+#: includes/class-lewis-license-settings.php:317
 #, php-format
 msgid ""
 "Please enter your license key for the %1$s theme in order to receive updates "
 "and support. <a href=\"%2$s\">Enter License Key</a>"
 msgstr ""
 
-#: patterns/footer-text.php:14
+#: patterns/footer-text.php:17
 msgid "Privacy Policy"
 msgstr ""
 
-#: patterns/footer-text.php:14
+#: patterns/footer-text.php:17
 msgid "Imprint"
 msgstr ""
 
-#: patterns/postmeta-date.php:13 patterns/postmeta.php:13
+#: patterns/postmeta-date.php:16 patterns/postmeta.php:16
 msgid "Posted on"
 msgstr ""
 
-#: patterns/postmeta.php:19
+#: patterns/postmeta.php:22
 msgid "by"
 msgstr ""
 
-#: patterns/postmeta.php:24
+#: patterns/postmeta.php:27
 msgid "in"
 msgstr ""
