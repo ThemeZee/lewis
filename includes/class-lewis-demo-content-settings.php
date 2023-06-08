@@ -154,6 +154,17 @@ class Lewis_Demo_Content_Settings {
 			)
 		);
 
+		$about = wp_insert_post(
+			array(
+				'post_title'    => 'About',
+				'post_content'  => self::load_demo_content( 'about' ),
+				'post_type'     => 'page',
+				'post_status'   => 'publish',
+				'post_author'   => get_current_user_id(),
+				'page_template' => 'page-no-title',
+			)
+		);
+
 		$blog = wp_insert_post(
 			array(
 				'post_title'   => 'Blog',
