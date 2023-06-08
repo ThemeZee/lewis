@@ -1,6 +1,6 @@
 <?php
 /**
- * Demo Content: Services
+ * Demo Content: About
  *
  * @package Lewis
  */
