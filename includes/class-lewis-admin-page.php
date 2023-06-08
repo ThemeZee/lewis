@@ -27,6 +27,9 @@ class Lewis_Admin_Page {
 
 		// Register settings.
 		add_action( 'admin_init', array( __CLASS__, 'register_settings' ), 9 );
+
+		// Add Admin notices.
+		add_action( 'admin_notices', array( __CLASS__, 'admin_notices' ) );
 	}
 
 	/**
@@ -147,6 +150,13 @@ class Lewis_Admin_Page {
 		endforeach;
 
 		return array_merge( $saved, $input );
+	}
+
+	/**
+	 * Show success and error notices when saving settings.
+	 */
+	public static function admin_notices() {
+		settings_errors( 'lewis_theme_settings_notices' );
 	}
 }
 

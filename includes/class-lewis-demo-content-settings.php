@@ -116,16 +116,31 @@ class Lewis_Demo_Content_Settings {
 
 		$categories = array();
 		if ( ! empty( $_POST['lewis_theme_settings']['lewis_demo_content']['categories'] ) ) {
-			$categories = self::create_demo_categories();
+			try {
+				$categories = self::create_demo_categories();
+				add_settings_error( 'lewis_theme_settings_notices', 'demo_import_categories', esc_html__( 'Categories were successfully imported.', 'lewis' ), 'success' );
+			} catch ( Exception ) {
+				add_settings_error( 'lewis_theme_settings_notices', 'demo_import_categories', esc_html__( 'Categories could not be imported.', 'lewis' ), 'error' );
+			}
 		}
 
 		if ( ! empty( $_POST['lewis_theme_settings']['lewis_demo_content']['posts'] ) ) {
-			self::create_demo_posts( $categories );
+			try {
+				self::create_demo_posts( $categories );
+				add_settings_error( 'lewis_theme_settings_notices', 'demo_import_posts', esc_html__( 'Blog Posts were successfully imported.', 'lewis' ), 'success' );
+			} catch ( Exception ) {
+				add_settings_error( 'lewis_theme_settings_notices', 'demo_import_posts', esc_html__( 'Blog Posts could not be imported.', 'lewis' ), 'error' );
+			}
 		}
 
 		if ( ! empty( $_POST['lewis_theme_settings']['lewis_demo_content']['pages'] ) ) {
 			$update_frontpage = ! empty( $_POST['lewis_theme_settings']['lewis_demo_content']['frontpage'] );
-			self::create_demo_pages( $update_frontpage );
+			try {
+				self::create_demo_pages( $update_frontpage );
+				add_settings_error( 'lewis_theme_settings_notices', 'demo_import_pages', esc_html__( 'Static pages were successfully imported.', 'lewis' ), 'success' );
+			} catch ( Exception ) {
+				add_settings_error( 'lewis_theme_settings_notices', 'demo_import_pages', esc_html__( 'Static pages could not be imported.', 'lewis' ), 'error' );
+			}
 		}
 
 		wp_safe_redirect( admin_url( 'themes.php?page=lewis-theme' ) );
