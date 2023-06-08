@@ -28,7 +28,6 @@ class Lewis_License_Settings {
 		add_action( 'admin_init', array( __CLASS__, 'deactivate_license' ) );
 
 		// Add Admin notices.
-		add_action( 'admin_notices', array( __CLASS__, 'license_activated_notice' ) );
 		add_action( 'admin_notices', array( __CLASS__, 'theme_page_notice' ) );
 
 		// Disable updates from WordPress.org.
@@ -168,10 +167,12 @@ class Lewis_License_Settings {
 		if ( is_wp_error( $response ) || 200 !== wp_remote_retrieve_response_code( $response ) ) {
 
 			if ( is_wp_error( $response ) ) {
-				$message = $response->get_error_message();
+				add_settings_error( 'lewis_theme_settings_notices', 'license_api_response_error', $response->get_error_message(), 'error' );
 			} else {
-				$message = __( 'An error occurred, please try again.', 'lewis' );
+				add_settings_error( 'lewis_theme_settings_notices', 'license_api_response_error', esc_html__( 'An error occurred, please try again.', 'lewis' ), 'error' );
 			}
+
+			wp_safe_redirect( admin_url( 'themes.php?page=lewis-theme' ) );
 		} else {
 
 			$license_data = json_decode( wp_remote_retrieve_body( $response ) );
@@ -186,51 +187,40 @@ class Lewis_License_Settings {
 							__( 'Your license key expired on %s.', 'lewis' ),
 							date_i18n( get_option( 'date_format' ), strtotime( $license_data->expires, time() ) )
 						);
+						add_settings_error( 'lewis_theme_settings_notices', 'license_expired', $message, 'error' );
 						break;
 
 					case 'disabled':
 					case 'revoked':
-						$message = __( 'Your license key has been disabled.', 'lewis' );
+						add_settings_error( 'lewis_theme_settings_notices', 'license_disabled', esc_html__( 'Your license key has been disabled.', 'lewis' ), 'error' );
 						break;
 
 					case 'missing':
-						$message = __( 'Invalid license.', 'lewis' );
+						add_settings_error( 'lewis_theme_settings_notices', 'license_missing', esc_html__( 'Invalid license key.', 'lewis' ), 'error' );
 						break;
 
 					case 'invalid':
 					case 'site_inactive':
-						$message = __( 'Your license is not active for this URL.', 'lewis' );
+						add_settings_error( 'lewis_theme_settings_notices', 'license_invalid', esc_html__( 'Your license is not active for this URL.', 'lewis' ), 'error' );
 						break;
 
 					case 'item_name_mismatch':
 						/* translators: the plugin name */
 						$message = sprintf( __( 'This appears to be an invalid license key for %s.', 'lewis' ), LEWIS_THEME_NAME );
+						add_settings_error( 'lewis_theme_settings_notices', 'license_item_name_mismatch', $message, 'error' );
 						break;
 
 					case 'no_activations_left':
-						$message = __( 'Your license key has reached its activation limit.', 'lewis' );
+						add_settings_error( 'lewis_theme_settings_notices', 'license_no_activations_left', esc_html__( 'Your license key has reached its activation limit.', 'lewis' ), 'error' );
 						break;
 
 					default:
-						$message = __( 'An error occurred, please try again.', 'lewis' );
+						add_settings_error( 'lewis_theme_settings_notices', 'license_general_error', esc_html__( 'An error occurred, please try again.', 'lewis' ), 'error' );
 						break;
 				}
+
+				wp_safe_redirect( admin_url( 'themes.php?page=lewis-theme' ) );
 			}
-		}
-
-		// Check if anything passed on a message constituting a failure.
-		if ( ! empty( $message ) ) {
-			$redirect = add_query_arg(
-				array(
-					'page'             => 'lewis-theme',
-					'lewis_activation' => 'false',
-					'message'          => rawurlencode( $message ),
-				),
-				admin_url( 'themes.php' )
-			);
-
-			wp_safe_redirect( $redirect );
-			exit();
 		}
 
 		// Retrieve the license from the database.
@@ -239,12 +229,12 @@ class Lewis_License_Settings {
 		// $license_data->license will be either "valid" or "invalid".
 		if ( 'valid' === $license_data->license ) {
 			$options['lewis_license_key'] = $license_key;
+			add_settings_error( 'lewis_theme_settings_notices', 'license_activated', esc_html__( 'License was successfully activated.', 'lewis' ), 'success' );
 		}
 		$options['lewis_license_status'] = $license_data->license;
 		update_option( 'lewis_theme_settings', $options );
 
 		wp_safe_redirect( admin_url( 'themes.php?page=lewis-theme' ) );
-		exit();
 	}
 
 	/**
@@ -291,22 +281,12 @@ class Lewis_License_Settings {
 		if ( is_wp_error( $response ) || 200 !== wp_remote_retrieve_response_code( $response ) ) {
 
 			if ( is_wp_error( $response ) ) {
-				$message = $response->get_error_message();
+				add_settings_error( 'lewis_theme_settings_notices', 'license_api_response_error', $response->get_error_message(), 'error' );
 			} else {
-				$message = __( 'An error occurred, please try again.', 'lewis' );
+				add_settings_error( 'lewis_theme_settings_notices', 'license_api_response_error', esc_html__( 'An error occurred, please try again.', 'lewis' ), 'error' );
 			}
 
-			$redirect = add_query_arg(
-				array(
-					'page'             => 'lewis-theme',
-					'lewis_activation' => 'false',
-					'message'          => rawurlencode( $message ),
-				),
-				admin_url( 'themes.php' )
-			);
-
-			wp_safe_redirect( $redirect );
-			exit();
+			wp_safe_redirect( admin_url( 'themes.php?page=lewis-theme' ) );
 		}
 
 		// Deactivate the License key in DB.
@@ -315,36 +295,6 @@ class Lewis_License_Settings {
 		update_option( 'lewis_theme_settings', $options );
 
 		wp_safe_redirect( admin_url( 'themes.php?page=lewis-theme' ) );
-		exit();
-	}
-
-	/**
-	 * This is a means of catching errors from the activation method above and displaying it to the customer
-	 */
-	public static function license_activated_notice() {
-		// phpcs:ignore
-		if ( isset( $_GET['lewis_activation'] ) && ! empty( $_GET['message'] ) ) {
-
-			// phpcs:ignore
-			switch ( $_GET['lewis_activation'] ) {
-
-				case 'false':
-					// phpcs:ignore
-					$message = urldecode( sanitize_text_field( wp_unslash( $_GET['message'] ) ) );
-					?>
-					<div class="error">
-						<p><?php echo wp_kses_post( $message ); ?></p>
-					</div>
-					<?php
-					break;
-
-				case 'true':
-				default:
-					// Developers can put a custom success message here for when activation is successful if they way.
-					break;
-
-			}
-		}
 	}
 
 	/**
