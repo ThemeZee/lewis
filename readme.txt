@@ -4,7 +4,7 @@ Theme URI: https://themezee.com/themes/lewis/
 Contributors: themezee
 Tags: full-site-editing, template-editing, one-column, blog, news, custom-background, custom-logo, custom-header, custom-menu, grid-layout, entertainment, editor-style, block-styles, block-patterns, rtl-language-support, featured-images, flexible-header, custom-colors, full-width-template, sticky-post, threaded-comments, translation-ready, theme-options, two-columns, three-columns
 Requires at least: 6.0
-Tested up to: 6.2
+Tested up to: 6.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
