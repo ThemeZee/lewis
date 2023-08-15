@@ -167,7 +167,7 @@ add_action( 'init', 'lewis_register_block_styles', 9 );
 /**
  * Set up the Plugin Updater Constants.
  */
-define( 'LEWIS_THEME_VERSION', '1.1' );
+define( 'LEWIS_THEME_VERSION', '1.1.1' );
 define( 'LEWIS_THEME_NAME', 'Lewis' );
 define( 'LEWIS_THEME_ID', 256624 );
 define( 'LEWIS_THEME_STORE_URL', 'https://themezee.com' );
